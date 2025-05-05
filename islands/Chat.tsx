@@ -22,11 +22,13 @@ export default function Chat() {
             ),
             data,
           ];
-        } 
+        }
         // finalはpreviewを上書き{
-        if( data.type === "final") {
+        if (data.type === "final") {
           return [
-            ...prev.filter((m) => !(m.sender === data.sender && m.type === "preview")),
+            ...prev.filter((m) =>
+              !(m.sender === data.sender && m.type === "preview")
+            ),
             data,
           ];
         }
@@ -45,7 +47,7 @@ export default function Chat() {
   return (
     <div>
       <div className="flex flex-col w-full max-w-2xl mx-auto">
-        {messages.map((m) => <MessageItem {...m} myId={idRef.current}/>)}
+        {messages.map((m) => <MessageItem  key={index} {...m} myId={idRef.current} />)}
       </div>
       <form
         onSubmit={(e) => {

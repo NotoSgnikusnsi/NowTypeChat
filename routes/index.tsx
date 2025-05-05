@@ -14,7 +14,6 @@ export default function Home() {
       <div className="w-full max-w-2xl">
         <Chat />
       </div>
-      
     </div>
   );
 }
