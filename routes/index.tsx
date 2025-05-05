@@ -1,5 +1,7 @@
-import { MessageList } from "../islands/MessageList.tsx";
-import { Form } from "../islands/Form.tsx";
+// import { MessageList } from "../islands/MessageList.tsx";
+// import { Form } from "../islands/Form.tsx";
+
+import Chat from "../islands/Chat.tsx";
 
 export default function Home() {
   return (
@@ -9,12 +11,15 @@ export default function Home() {
           <span className="text-yellow-500">Now</span>TypeChat
         </h1>
       </header>
-      <main className="w-full flex flex-col items-center">
+      {
+        /* <main className="w-full flex flex-col items-center">
         <MessageList />
       </main>
       <footer className="w-full max-w-2xl">
         <Form />
-      </footer>
+      </footer> */
+      }
+      <Chat />
     </div>
   );
 }

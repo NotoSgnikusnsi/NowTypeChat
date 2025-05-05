@@ -26,14 +26,14 @@ export function Form({ onMessage }: { onMessage: (message: string) => void }) {
 
   const handleSubmit = (event: Event) => {
     event.preventDefault();
-      setMessage(""); // 入力フィールドをクリア
+    setMessage(""); // 入力フィールドをクリア
   };
 
   const handleChange = (event: Event) => {
     const target = event.target as HTMLInputElement;
     setMessage(target.value);
     if (socket && socket.readyState === WebSocket.OPEN) {
-      socket.send(target.value); 
+      socket.send(target.value);
     } else {
       console.error("WebSocket is not open. Cannot send message.");
     }

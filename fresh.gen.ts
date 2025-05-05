@@ -4,22 +4,22 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $api_ws from "./routes/api/ws.ts";
 import * as $index from "./routes/index.tsx";
+import * as $ws from "./routes/ws.ts";
+import * as $Chat from "./islands/Chat.tsx";
 import * as $Form from "./islands/Form.tsx";
-import * as $MessageList from "./islands/MessageList.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
-    "./routes/api/ws.ts": $api_ws,
     "./routes/index.tsx": $index,
+    "./routes/ws.ts": $ws,
   },
   islands: {
+    "./islands/Chat.tsx": $Chat,
     "./islands/Form.tsx": $Form,
-    "./islands/MessageList.tsx": $MessageList,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
