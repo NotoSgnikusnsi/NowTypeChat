@@ -11,15 +11,10 @@ export default function Home() {
           <span className="text-yellow-500">Now</span>TypeChat
         </h1>
       </header>
-      {
-        /* <main className="w-full flex flex-col items-center">
-        <MessageList />
-      </main>
-      <footer className="w-full max-w-2xl">
-        <Form />
-      </footer> */
-      }
-      <Chat />
+      <div className="w-full max-w-2xl">
+        <Chat />
+      </div>
+      
     </div>
   );
 }
