@@ -12,9 +12,9 @@ export default function MessageItem(
   const opacity = type === "preview" ? "opacity-50" : "opacity-100";
 
   return (
-    <div class={`p-2 mb-2 font-mono text-lg break-all ${align} ${opacity}`}>
-      <p>myId: {myId}</p>
-      <p>{message}</p>
+    <div class={`p-2 mb-2 font-mono break-all ${align} ${opacity}`}>
+      <p>{myId}</p>
+      <p class="text-2xl">{message}</p>
     </div>
   );
 }

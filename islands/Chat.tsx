@@ -23,7 +23,7 @@ export default function Chat() {
             data,
           ];
         }
-        // finalはpreviewを上書き{
+        // finalはpreviewを上書き
         if (data.type === "final") {
           return [
             ...prev.filter((m) =>
@@ -32,15 +32,16 @@ export default function Chat() {
             data,
           ];
         }
+        return prev;
       });
     };
     setWs(socket);
     return () => socket.close();
   }, []);
 
-  const sendMessage = (type: "preview" | "final") => {
+  const sendMessage = (type: "preview" | "final", message: string) => {
     if (!ws || ws.readyState !== WebSocket.OPEN) return;
-    ws.send(JSON.stringify({ sender: idRef.current, message: input, type }));
+    ws.send(JSON.stringify({ sender: idRef.current, message, type }));
     if (type === "final") setInput("");
   };
 
@@ -54,7 +55,7 @@ export default function Chat() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          sendMessage("final");
+          sendMessage("final", input);
         }}
         class="flex"
       >
@@ -62,8 +63,9 @@ export default function Chat() {
           class="flex-1 p-2 border rounded-l"
           value={input}
           onInput={(e) => {
-            setInput((e.target as HTMLInputElement).value);
-            sendMessage("preview");
+            const value = (e.target as HTMLInputElement).value;
+            setInput(value);
+            sendMessage("preview", value);
           }}
           placeholder="入力してください..."
         />
