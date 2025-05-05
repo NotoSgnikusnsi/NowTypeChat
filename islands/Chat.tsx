@@ -47,7 +47,9 @@ export default function Chat() {
   return (
     <div>
       <div className="flex flex-col w-full max-w-2xl mx-auto">
-        {messages.map((m) => <MessageItem  key={index} {...m} myId={idRef.current} />)}
+        {messages.map((m, index) => (
+          <MessageItem key={index} {...m} myId={idRef.current} />
+        ))}
       </div>
       <form
         onSubmit={(e) => {
