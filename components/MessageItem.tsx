@@ -1,7 +1,4 @@
-interface MessageItemProps {
-  message: string;
-  sender: "self" | "other";
-}
+import MessageItemProps from "../models/Message.ts";
 
 export function MessageItem({ message, sender }: MessageItemProps) {
   const isSelf = sender === "self";

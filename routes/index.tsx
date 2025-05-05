@@ -1,5 +1,5 @@
-import { MessageList } from "../components/MessageList.tsx";
-import { Form } from "../components/Form.tsx";
+import { MessageList } from "../islands/MessageList.tsx";
+import { Form } from "../islands/Form.tsx";
 
 export default function Home() {
   return (
